@@ -24,3 +24,40 @@ function renderMonth() {
 
     setTimeout("renderMonth()", 1000);
 }
+
+function sumAll() {
+
+}
+
+function storeData() {
+    let category = prompt("In what did you spend?");
+    let spending = prompt("And how much?");
+
+    if(category === "") {
+        alert("Please enter in what did you spend your money");
+    } else if(spending === "") {
+        alert("Please enter how much you spent");
+    } else if(category && spending) {
+        category = capitalizeFirstLetter(category);
+        localStorage.setItem(category, spending);
+    } else {
+        alert("User cancelled");
+    }
+
+    loadStorage();
+}
+
+function loadStorage() {
+
+    let field = document.getElementById('pieChart');
+
+        for(let i=0; i<localStorage.length; i++) {
+            let key = localStorage.key(i);
+            let value = localStorage.getItem(key);
+            field.innerHTML += `${key} ${value}<br />`;
+    }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}

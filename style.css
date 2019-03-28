@@ -52,9 +52,10 @@ button i{
     height: 8vh;
     text-align: center;
     padding-top: 2rem;
+    font-size: 1.4rem;
 }
 
-.pieChart {
+#pieChart {
     border: orange solid;
     height: 50vh;
     padding: 2rem 5rem;
@@ -77,10 +78,6 @@ footer {
     height: 10vh;
     border: black solid;
     text-align: center;
-}
-
-footer p {
-    padding-top: 3rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -114,7 +111,8 @@ footer p {
         font-size:  0.8rem;
     }
 
-    footer p {
-        font-size: 12px;
+    .spendings {
+        padding: 1rem 2rem;
     }
+
 }
