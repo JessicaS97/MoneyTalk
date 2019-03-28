@@ -49,15 +49,10 @@ button i{
 
 #displayDate {
     border: black solid;
-    height: 8vh;
+    height: 6vh;
     text-align: center;
     padding-top: 2rem;
-}
-
-.pieChart {
-    border: orange solid;
-    height: 50vh;
-    padding: 2rem 5rem;
+    font-size: 1.5rem;
 }
 
 .spendings {
@@ -89,25 +84,17 @@ footer p {
         font-size: 13px;
     }
 
-    .button {
-        text-align: center;
-    }
-
-    .button:last-child a {
-        float: none;
-    }
-
-    .button a{
-        justify-content: center;
-        display: inline-block
-    }
-
     .button i {
+        padding-left: 0.8rem;
         font-size: 1.6rem;
     }
 
     #displayDate {
         font-size: 1.2rem;
+    }
+
+    .spendings {
+        padding: 1rem 2rem;
     }
 
     .totalSpending {
