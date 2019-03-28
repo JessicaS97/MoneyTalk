@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container {
+    margin: auto;
+    border: yellow solid;
+}
+
+.title {
+    text-align: center;
+    height: 5vh;
+    padding-top: 1.2rem;
+}
+
+.btn {
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+}
+
+.button a {
+    display: inline-block;
+}
+
+.button {
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.btn i{
+    color: black;
+    font-size: 2rem;
+}
+
+.btn div {
+    border: blue solid;
+    width: 45%;
+}
+
+.button:last-child a{
+    margin-left: 95%;
+    color: red;
+    justify-content: flex-end;
+}
+
+button i{
+    border: green solid;
+}
+
+.displayDate {
+    border: black solid;
+    height: 20vh;
+}
+
+.pieChart {
+    border: orange solid;
+    height: 40vh;
+}
+
+.totalSpending {
+    border: green solid;
+    height: 10vh;
+}
+
+footer {
+    height: 10vh;
+    border: black solid;
+    text-align: center;
+}
+
+footer p {
+    padding-top: 3rem;
+}
