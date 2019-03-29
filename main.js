@@ -11,6 +11,7 @@ function renderTime() {
     clock.innerText = `${dayArray[day]}, ${monthDay} ${monthArray[month]}`;
 
     setTimeout("renderTime()", 1000);
+
 }
 
 function renderMonth() {
@@ -26,7 +27,17 @@ function renderMonth() {
 }
 
 function sumAll() {
-
+    let key, value, sum=0;
+    for(let i=0; i<localStorage.length; i++) {
+        key = localStorage.key(i);
+        value = localStorage.getItem(key);
+        value = parseInt(value);
+        sum += value;
+    }
+    let field = document.getElementsByClassName('totalSpending');
+    for(let i=0; i<field.length; i++) {
+        field[i].innerHTML = `Total Spending: $${sum}`;
+    }
 }
 
 function storeData() {
@@ -43,15 +54,14 @@ function storeData() {
     } else {
         alert("User cancelled");
     }
-
-    loadStorage();
 }
 
 function loadStorage() {
 
-    let field = document.getElementById('pieChart');
+    let field = document.getElementById('spendings');
 
         for(let i=0; i<localStorage.length; i++) {
+            
             let key = localStorage.key(i);
             let value = localStorage.getItem(key);
             field.innerHTML += `${key} ${value}<br />`;

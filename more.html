@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Money Talk</title>
 </head>
-<body onLoad="renderMonth();">
+<body onLoad="renderMonth(); loadStorage(); sumAll();">
     <main>
         <div class="title"><h3>Money Talk</h3></div>
         <div class="container">
@@ -21,14 +21,9 @@
                 </div>
             </nav>
             <div id="displayDate"></div>
-            <div class="spendings">
-                <h4>One</h4>
-                <h4>One</h4>
-                <h4>One</h4>
-                <h4>One</h4>
-            </div>
+            <div id="spendings"> </div>
             <div class="totalSpending">
-                <h3>Total Spending:</h3>
+                <div class="sumAll"></div>
             </div>
         </div>
     </main>

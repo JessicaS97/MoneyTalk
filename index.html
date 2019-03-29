@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Money Talk</title>
 </head>
-<body onLoad="renderTime();">
+<body onLoad="renderTime(); sumAll();">
     <main>
         <div class="title"><h3>Money Talk</h3></div>
         <div class="container">
@@ -23,13 +23,9 @@
                 </div>
             </nav>
             <div id="displayDate"></div>
-            <fieldset>
-                <div id="pieChart">
-                    <p id="text"></p>
-                </div>
-            </fieldset>
+            <div id="pieChart"></div>
             <div class="totalSpending">
-                <h3>Total Spending:</h3>
+                <div class="sumAll"></div>
             </div>
         </div>
     </main>
