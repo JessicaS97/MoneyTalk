@@ -9,7 +9,7 @@
 
 .container {
     margin: auto;
-    border: yellow solid;
+    background: cornsilk;
 }
 
 .title {
@@ -35,12 +35,7 @@
 }
 
 .btn div {
-    border: blue solid;
     width: 45%;
-}
-
-button i{
-    border: green solid;
 }
 
 .button:last-child a{
@@ -48,32 +43,50 @@ button i{
 }
 
 #displayDate {
-    border: black solid;
     height: 8vh;
     text-align: center;
     padding-top: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
 }
 
 #pieChart {
-    border: orange solid;
     height: 50vh;
     padding: 2rem 5rem;
+}
+
+.progressBar {
+    margin-top: 8rem;
+    width: 450px;
+    height: 50px;
+    border-radius: 1.5rem;
+}
+
+.progress {
+    background: rgb(165, 241, 51);
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
 }
 
 #spendings {
-    border: orange solid;
     height: 50vh;
     padding: 2rem 5rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+
+.clearAll i {
+    float: right;
+    color: black;
 }
 
 .totalSpending {
-    border: green solid;
     height: 5vh;
     text-align: center;
     padding-top: 0.5rem;
+    padding-top: 1rem;
 }
-
 
 @media only screen and (max-width: 600px) {
 

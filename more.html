@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Money Talk</title>
 </head>
-<body onLoad="renderMonth(); loadStorage(); sumAll();">
+<body onLoad="renderMonth(); loadStorage(); sumAll(); deleteItem();">
     <main>
         <div class="title"><h3>Money Talk</h3></div>
         <div class="container">
@@ -17,11 +17,15 @@
                     <div class="button">
                         <a href="index.html"><i class="fas fa-arrow-circle-left"></i></a>
                     </div>
-                    <div class="button"></div>
+                    <div class="button">
+                            <a href="" onclick="storeData(); return false;"><i class="fas fa-plus-circle"></i></a>
+                        </div>
                 </div>
             </nav>
             <div id="displayDate"></div>
-            <div id="spendings"> </div>
+            <div id="spendings">
+                <div class="clearAll"><a href="" onclick="deleteAll()"><i class="fas fa-trash"></i></a></div>
+            </div>
             <div class="totalSpending">
                 <div class="sumAll"></div>
             </div>

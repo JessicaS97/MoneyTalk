@@ -36,7 +36,7 @@ function sumAll() {
     }
     let field = document.getElementsByClassName('totalSpending');
     for(let i=0; i<field.length; i++) {
-        field[i].innerHTML = `Total Spending: $${sum}`;
+        field[i].innerHTML = `Total Spendings: $${sum}`;
     }
 }
 
@@ -54,6 +54,8 @@ function storeData() {
     } else {
         alert("User cancelled");
     }
+
+    location.reload();
 }
 
 function loadStorage() {
@@ -70,4 +72,23 @@ function loadStorage() {
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
+function deleteItem() {
+
+    let items = {};
+
+    for(let i=0; i<localStorage.length; i++) {
+        let key = localStorage.key(i);
+        let value = localStorage.getItem(key);
+
+    }
+}
+
+function deleteAll() {
+    let decision = confirm("Are you sure you want to delete all?");
+
+    if(decision) {
+        localStorage.clear();
+    }
 }
