@@ -1,6 +1,9 @@
 # MoneyTalk
 
 This website was built on the basis of solving my struggles to save money as a student. 
+With MoneyTalk, the user can set the maximum amount of money they plan to spend, or the budget. As the user keeps adding spendings,
+these data will be stored in the computer for unlimited time. They will also have the option to reset all, which could be a useful
+option at the start of each month.
 
 ## Getting Started
 
