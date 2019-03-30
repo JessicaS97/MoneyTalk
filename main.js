@@ -136,7 +136,7 @@ function deleteItem() {
 }
 
 function deleteAll() {
-    let decision = confirm("Are you sure you want to delete all?");
+    let decision = confirm("Are you sure you want to reset all?");
 
     if(decision) {
         localStorage.clear();

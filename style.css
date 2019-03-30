@@ -40,12 +40,11 @@
 
 .budget a {
     font-size: 1rem;
-    color: black;
     text-decoration: none;
 }
 
 .btn i{
-    color: black;
+    color: orange;
     font-size: 2rem;
 }
 
