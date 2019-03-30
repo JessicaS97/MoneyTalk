@@ -34,4 +34,4 @@ GitHub
 
 ## Authors
 
-* **Jessica Johanna Sun** 
+**Jessica Johanna Sun** 
