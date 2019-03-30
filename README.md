@@ -14,7 +14,9 @@ spent all the money they had.
 * Total spendings is calculated and displayed
 * Ability to set budget or change it at anytime, and progress bar and total spendings will be updated
 * Progress bar changes color depending to how close they are to spending their budget
-* Error checking: 
+* Error checking: if user did not set a budget yet, progress bar will not be updated
+                  
+* Each user will have their own copy of data as it is saved in each ones's computer using localstorage
 
 
 ## Built With
