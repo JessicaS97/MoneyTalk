@@ -106,14 +106,14 @@
 
 #goal {
     border: solid black;
-    width: 20vw;
+    width: 30vw;
 }
 
 .sumAll {
     padding-top: 1rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
 
     .title {
         font-size: 13px;
@@ -146,6 +146,27 @@
 
     .spendings {
         padding: 1rem 2rem;
+    }
+
+    #budget {
+        flex: 3;
+        padding: 0 0.5rem;
+    }
+
+    #goal {
+        width: 40vw;
+    }
+
+    .progressBar {
+        margin-top: 8rem;
+        width: 300px;
+        height: 30px;
+    }
+
+    #progress {
+        font-size: 1.5rem;
+        width: 100%;
+        height: 100%;
     }
 
 }
