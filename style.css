@@ -74,9 +74,11 @@
     width: 450px;
     height: 50px;
     border-radius: 1.5rem;
+    background: #f3e2cb;
 }
 
-.progress {
+#progress {
+    float: left;
     background: rgb(165, 241, 51);
     text-align: center;
     font-size: 2rem;

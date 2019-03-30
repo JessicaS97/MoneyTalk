@@ -115,7 +115,7 @@ function loadStorage() {
             let key = localStorage.key(i);
             let value = localStorage.getItem(key);
             if(key !== 'Budget') {
-                field.innerHTML += `${key} ${value}<br />`;
+                field.innerHTML += `${key} -${value}<br />`;
             } 
     }
 }
@@ -171,15 +171,32 @@ function setBudget(e) {
     } else if (document.getElementById('goal').textContent === 'Changed') {
         document.getElementById('goal').textContent = 'Click to set budget';
     }
+    location.reload();
 }
 
 
 //On load, new spending and on update budget, update progress bar
 function updateBar() {
     // If user did not set a budget, bar stays full
-    if(displayBudget() === null) {
+    if(displayBudget() === null){
     } else {
-        
+        if(100-calculateBar() <= 0) {
+            document.getElementById('progress').style.width = "100%";
+            document.getElementById('progress').style.background = "#f3e2cb";
+            document.getElementById('progress').textContent = 'No money';
+        } else {
+            document.getElementById('progress').style.width = `${100-calculateBar()}%`;
+            document.getElementById('progress').textContent = `${100-calculateBar()}%`;
+            if(100-calculateBar() <= 20) {
+                document.getElementById('progress').style.background = "red";
+            } else if(100-calculateBar() <= 40) {
+                document.getElementById('progress').style.background = "#c04e0c";
+            } else if(100-calculateBar() <= 60) {
+                document.getElementById('progress').style.background = "orange";
+            } else if(100-calculateBar() <= 80) {
+                document.getElementById('progress').style.background = "rgb(207, 253, 138)";
+            }
+        } 
     }
 }
 
