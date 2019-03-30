@@ -26,34 +26,61 @@ function renderMonth() {
     setTimeout("renderMonth()", 1000);
 }
 
+function displayBudget() {
+    let index;
+    
+    for(i=0; i<localStorage.length; i++) {
+        if(localStorage.key(i) === 'Budget') {
+            index = i;
+        }
+    }
+    let budget = localStorage.key(index);
+    let budgetNumber = localStorage.getItem(budget);
+    return budgetNumber;
+}
+
 function sumAll() {
-    let key, value, sum=0;
+    let key, value, sum=0, index;
     for(let i=0; i<localStorage.length; i++) {
         key = localStorage.key(i);
         value = localStorage.getItem(key);
         value = parseInt(value);
         sum += value;
     }
-    let field = document.getElementsByClassName('totalSpending');
+    
+    for(i=0; i<localStorage.length; i++) {
+        if(localStorage.key(i) === 'Budget') {
+            index = i;
+        }
+    }
+    let budget = localStorage.key(index);
+    let budgetNumber = localStorage.getItem(budget);
+    sum -= parseInt(budgetNumber);
+    let field = document.getElementsByClassName('sumAll');
     for(let i=0; i<field.length; i++) {
-        field[i].innerHTML = `Total Spendings: $${sum}`;
+        field[i].innerHTML = `Total Spendings $${sum}`;
     }
 }
 
 function storeData() {
-    let category = prompt("In what did you spend?");
-    let spending = prompt("And how much?");
 
-    if(category === "") {
-        alert("Please enter in what did you spend your money");
-    } else if(spending === "") {
+    let category = prompt("In what did you spend?");
+
+    if (category == null) {
+        return;
+    } else if(category === "") {
+        alert("Please enter a spending");
+        return;
+    };
+
+    let spending = prompt("How much?");
+
+    if(spending === "") {
         alert("Please enter how much you spent");
     } else if(category && spending) {
         category = capitalizeFirstLetter(category);
         localStorage.setItem(category, spending);
-    } else {
-        alert("User cancelled");
-    }
+    };
 
     location.reload();
 }
@@ -90,5 +117,35 @@ function deleteAll() {
 
     if(decision) {
         localStorage.clear();
+    }
+}
+
+var button = document.getElementById('budget').addEventListener('click', buttonClick);
+var budget = document.getElementById('goal').addEventListener('click', setBudget);
+
+function buttonClick(e) {
+    if (document.getElementById('budget').textContent === 'Budget') {
+        document.getElementById('budget').textContent = `${displayBudget()}`;
+    } else if (document.getElementById('budget').textContent === `${displayBudget()}`){
+        document.getElementById('budget').textContent = 'Budget';
+    }
+}
+
+function setBudget(e) {
+    if (document.getElementById('goal').textContent === 'Click to set budget') {
+        let answer = confirm("Set budget?");
+        if(answer === false) {
+            return;
+        } else {
+            let decision = prompt("New budget");
+            if(decision === null) {
+                return;
+            } else {
+                localStorage.setItem("Budget", decision);
+                document.getElementById('goal').textContent = `${decision}`;
+            }
+        }
+    } else if (document.getElementById('goal').textContent === 'Changed') {
+        document.getElementById('goal').textContent = 'Click to set budget';
     }
 }
