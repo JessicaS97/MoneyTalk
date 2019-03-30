@@ -39,26 +39,48 @@ function displayBudget() {
     return budgetNumber;
 }
 
-function sumAll() {
-    let key, value, sum=0, index;
+function sum() {
+    let sum=0;
     for(let i=0; i<localStorage.length; i++) {
         key = localStorage.key(i);
         value = localStorage.getItem(key);
         value = parseInt(value);
-        sum += value;
+        if(key !== 'Budget') {
+            sum += value;
+        }        
+    }
+
+    return sum;
+}
+
+function sumAll() {
+    let key, value, sum=0, index, hasBudget;
+    for(let i=0; i<localStorage.length; i++) {
+        key = localStorage.key(i);
+        value = localStorage.getItem(key);
+        value = parseInt(value);
+        if(key !== 'Budget') {
+            sum += value;
+        }        
     }
     
     for(i=0; i<localStorage.length; i++) {
         if(localStorage.key(i) === 'Budget') {
             index = i;
+            hasBudget = true;
         }
     }
+
     let budget = localStorage.key(index);
     let budgetNumber = localStorage.getItem(budget);
-    sum -= parseInt(budgetNumber);
+    
     let field = document.getElementsByClassName('sumAll');
-    for(let i=0; i<field.length; i++) {
-        field[i].innerHTML = `Total Spendings $${sum}`;
+    if(displayBudget() === null) {
+        field[i].innerHTML = `Total Spendings $${0}`;
+    } else {
+        for(let i=0; i<field.length; i++) {
+            field[i].innerHTML = `Total Spendings $${sum}`;
+        }
     }
 }
 
@@ -90,10 +112,11 @@ function loadStorage() {
     let field = document.getElementById('spendings');
 
         for(let i=0; i<localStorage.length; i++) {
-            
             let key = localStorage.key(i);
             let value = localStorage.getItem(key);
-            field.innerHTML += `${key} ${value}<br />`;
+            if(key !== 'Budget') {
+                field.innerHTML += `${key} ${value}<br />`;
+            } 
     }
 }
 
@@ -128,7 +151,7 @@ function buttonClick(e) {
         document.getElementById('budget').textContent = `${displayBudget()}`;
     } else if (document.getElementById('budget').textContent === `${displayBudget()}`){
         document.getElementById('budget').textContent = 'Budget';
-    }
+    } 
 }
 
 function setBudget(e) {
@@ -148,4 +171,20 @@ function setBudget(e) {
     } else if (document.getElementById('goal').textContent === 'Changed') {
         document.getElementById('goal').textContent = 'Click to set budget';
     }
+}
+
+
+//On load, new spending and on update budget, update progress bar
+function updateBar() {
+    // If user did not set a budget, bar stays full
+    if(displayBudget() === null) {
+    } else {
+        
+    }
+}
+
+function calculateBar() {
+    let percentage = sum() * 100 / displayBudget(); 
+    percentage = Math.round(percentage);
+    return percentage;
 }
