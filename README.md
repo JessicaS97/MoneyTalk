@@ -20,6 +20,7 @@ spent all the money they had.
 ## Purpose
 * Simple website for busy students
 * Keep track of spendings and be more aware of their financial situation
+* Let computer do all calculations related to their spending
 
 ## Built With
 
